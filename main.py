@@ -6,6 +6,7 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 
+# 4. korak - kreirati funkcije koje ce se pokretati kao odgovor na web upite GET, POST, DELETE ...
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -18,17 +19,12 @@ def about():
 
 @app.route('/contact')
 def contact():
-    return 'Contact Page is working!'
+    return render_template('contact.html')
 
 
 @app.route('/user/<name>')
 def user(name):
-    if name:
-        message = f'{name.capitalize()}, pozdrav iz User stranice!'
-    else:
-        message = f'User Page is working!'
-    
-    return message
+    return render_template('user.html')
 
 
 
