@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block page_title %}{% endblock %} Page</title>
+    </head>
+
+    <a href="http://127.0.0.1:5000/">Home</a>
+    <a href="http://127.0.0.1:5000/about">About</a>
+    <a href="http://127.0.0.1:5000/contact">Contact</a>
+    <a href="http://127.0.0.1:5000/user">User</a>
+    <a href="http://127.0.0.1:5000/currentdate">Current date</a>
+
+    <body>
+        {% block page_contect %}
+        {% endblock %}
+    </body>
+</html>

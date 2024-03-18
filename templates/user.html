@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>User Page</title>
-    </head>
+{% extends 'base.html' %}
 
-    <body>
-        <h1>User Page is working</h1>
-        <p>{{ name_in_html }}, dobrodosli u Flask!</p>
-    </body>
-</html>
+{% block page_title %}
+User Date
+{% endblock %}
+
+{% block page_contect %}
+<h1>User Page is working</h1>
+<p>{{ name_in_html }}, dobrodosli u Flask!</p>
+{% endblock %}

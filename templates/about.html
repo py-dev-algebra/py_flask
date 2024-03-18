@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>About Page</title>
-    </head>
+{% extends 'base.html' %}
 
-    <body>
-        <h1>About Page is working</h1>
-        <p>My first paragraph.</p>
-    </body>
-</html>
+{% block page_title %}
+    About
+{% endblock %}
+
+{% block page_contect %}
+<h1>About Page is working</h1>
+<p>My first paragraph.</p>
+{% endblock %}
