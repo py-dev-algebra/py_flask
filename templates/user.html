@@ -5,6 +5,18 @@ User Date
 {% endblock %}
 
 {% block page_contect %}
-<h1>User Page is working</h1>
-<p>{{ name_in_html }}, dobrodosli u Flask!</p>
+<h1>Users from Web:</h1>
+
+{% for user in users %}
+<div class="card" style="width: 18rem;">
+    <img src="{{ user['user_avatar'] }}" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{ user['name'] }}</h5>
+        <p class="card-text">
+            {{ user['email'] }}
+        </p>
+        <a href="#" class="btn btn-primary">Details</a>
+    </div>
+</div>
+{% endfor %}
 {% endblock %}

@@ -1,7 +1,9 @@
 # 1. korak - import klase Flask iz modula flask
 from flask import Flask, render_template
+import random
 
 from services.datetime_services.datetime_manager import get_current_datetime
+from services.web_api_services.web_api_manager import get_users
 
 
 # 2. korak - kreirati objekt klase Flask. Uobicajeno je nazvati ga app
@@ -24,16 +26,20 @@ def contact():
     return render_template('contact.html')
 
 
-@app.route('/user')
-def user():
-    name_in_python = 'Pero Peric' # moze biti dohvacena iz baze
-    return render_template('user.html', name_in_html=name_in_python)
+@app.route('/users')
+def users():
+    users_list = get_users()
+    for user in users_list:
+        user['user_avatar'] = f'https://robohash.org/{random.randint(1, 10)}.png?size=100x100'
+    return render_template('user.html', users=users_list)
 
 
 @app.route('/currentdate')
 def current_date():
     current_date_var = get_current_datetime()
     return render_template('current_date.html', current_date_var=current_date_var)
+
+
 
 
 
