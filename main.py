@@ -30,7 +30,7 @@ def contact():
 def users():
     users_list = get_users()
     for user in users_list:
-        user['user_avatar'] = f'https://robohash.org/{random.randint(1, 10)}.png?size=100x100'
+        user['user_avatar'] = f'https://robohash.org/{random.randint(1, 10)}.png'
     return render_template('user.html', users=users_list)
 
 
